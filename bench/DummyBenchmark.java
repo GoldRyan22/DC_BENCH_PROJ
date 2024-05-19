@@ -23,9 +23,7 @@ import java.util.Scanner;
                     Arr[i]=Arr[j];
                     Arr[j]=aux;
                 }
-            }
-
-            
+            }      
     }
 
     public void initialize(String FilePath) throws FileNotFoundException
@@ -64,7 +62,7 @@ import java.util.Scanner;
             System.out.println("time = " + Timer.stop() + "ns");;
         } catch (FileNotFoundException e)
           {
-
+            System.err.println("could not open the input file :(");
           }
 
     }

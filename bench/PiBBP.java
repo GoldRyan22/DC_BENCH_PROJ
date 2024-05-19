@@ -3,14 +3,11 @@ import timing.*;
 
 import java.math.RoundingMode;
 import java.math.BigDecimal;
-import java.math.MathContext;
-
-
 
 public class PiBBP implements IBenchmark
 {
 
-    public void run(int n)
+    public BigDecimal run(int n)
     {
         
             BigDecimal pi = BigDecimal.ZERO;
@@ -23,22 +20,36 @@ public class PiBBP implements IBenchmark
                 .subtract(BigDecimal.valueOf(1).divide(BigDecimal.valueOf(8 * i + 6), n, RoundingMode.HALF_UP)));
                 pi = pi.add(nmb);
             }
-            System.out.println(pi);
-        }
+            return pi;
+    }
+
+
+    public void warmUp()
+    {
+        this.run(50);
+    }
 
     public void run(){}
     public void initialize(){}
     public void clean(){}
-    public void cancel(){}    
+    public void cancel()
+    {
+        System.exit(-1);
+    }    
 
 
     public static void main(String[] args) 
     {
         PiBBP A=new PiBBP();
         timing.Timer Timer=new Timer();
+
+        A.warmUp();
         Timer.start();
-        A.run(400);
-        System.out.println("time = " + Timer.stop() + "ns");
+        BigDecimal pi=A.run(100);
+        long totalTime=Timer.stop();
+
+        System.out.println(pi);
+        System.out.println("time = " + totalTime + "ns");
         
     }
 
