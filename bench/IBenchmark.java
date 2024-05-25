@@ -1,5 +1,5 @@
 package bench;
-interface IBenchmark 
+public interface IBenchmark 
 {
     void run();
     void initialize();
