@@ -28,20 +28,23 @@ package bench;
             long startTime = System.nanoTime();
             long primesFound = 0;
 
+            int size = 4565;
+
             if (useUnrolling) {
                 try {
-                    primesFound = recursiveUnrolled(1, unrollLevel, 4565, 0);
+                    primesFound = recursiveUnrolled(1, unrollLevel, size, 0);
                 } catch (StackOverflowError e) {
                     System.out.println("Stack overflow occurred during unrolled recursion.");
                 }
             } else {
                 try {
-                    primesFound = recursive(1, 4565, 0);
+                    primesFound = recursive(1, size, 0);
                 } catch (StackOverflowError e) {
                     System.out.println("Stack overflow occurred during regular recursion.");
                 }
             }
 
+            System.out.printf("size: %d %n",size);
             long endTime = System.nanoTime();
             double elapsedTime = (endTime - startTime) / 1_000_000.0;
             System.out.printf("Finished in %.4f Milli%n", elapsedTime);
