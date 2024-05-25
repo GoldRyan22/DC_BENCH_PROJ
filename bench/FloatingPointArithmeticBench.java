@@ -6,7 +6,7 @@ import java.util.Scanner;
 import timing.*;
 
 public class FloatingPointArithmeticBench implements IBenchmark {
-    int size = 100;
+    public int size = 100;
     Float[] list;
 
     public int run(int n, String type) {
@@ -74,7 +74,7 @@ public class FloatingPointArithmeticBench implements IBenchmark {
         FloatingPointArithmeticBench A = new FloatingPointArithmeticBench();
         Timer timer = new Timer();
         try {
-            A.initialize("float_1000.txt");
+            A.initialize("inputFiles/float_1000.txt");
         } catch (FileNotFoundException e) {
             System.err.println("could not open the input file :<");
         }

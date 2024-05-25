@@ -45,12 +45,11 @@ public class PiBBP implements IBenchmark
 
         A.warmUp();
         Timer.start();
-        BigDecimal pi=A.run(100);
+        BigDecimal pi=A.run(5000);
         long totalTime=Timer.stop();
 
         System.out.println(pi);
         System.out.println("time = " + totalTime + "ns");
         
     }
-
 }

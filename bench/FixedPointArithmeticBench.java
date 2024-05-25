@@ -16,12 +16,12 @@ public class FixedPointArithmeticBench implements IBenchmark{
         {   
             for(int i = 0; i < N; i++){
                 if(i % 2 == 0){
-                    result += list[i] + list[list.length - 1 - i];
-                    result += list[list.length - 1 - i] / list[i];
+                    result += list[i] + list[list.length- i - 1];
+                    result += list[list.length- i -1] / list[i];
                 }
                 else{
-                    result += list[i] - list[list.length - 1 - i];
-                    result += list[list.length - 1 - i] * list[i];
+                    result += list[i] - list[list.length - i -1];
+                    result += list[list.length- i -1] * list[i];
                 }
             }
         }    
