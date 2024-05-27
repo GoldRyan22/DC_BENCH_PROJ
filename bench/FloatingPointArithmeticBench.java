@@ -81,10 +81,10 @@ public class FloatingPointArithmeticBench implements IBenchmark {
         
         timer.start();
         int iterations = 200;
-        A.run(iterations, "branching");
+        int ops = A.run(iterations, "branching");
         long totalTime = timer.stop();
         System.out.println("time = " + totalTime + "ns");
-        long MOPS = (12 * A.size * iterations) / (totalTime / 1000);
+        long MOPS = (ops * A.size * iterations) / (totalTime / 1000);
         System.out.println("MOPS = " + MOPS);
     }
 }
