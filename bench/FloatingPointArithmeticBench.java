@@ -20,7 +20,7 @@ public class FloatingPointArithmeticBench implements IBenchmark {
                 r = k / list[2] + list[6];
                 res = k * r / (list[1] + r);
             }
-            return 15;
+            return 18;
         }
         else if(type.equals("branching")) {
             Float[] numbers = {3.0f, 4.0f, 5.5f, 6.7f, 1.1f};
@@ -38,7 +38,7 @@ public class FloatingPointArithmeticBench implements IBenchmark {
                 else
                     k = list[0];
             }
-            return 3;
+            return 9;
         }
         else {
             Float[] a = new Float[n];
@@ -47,7 +47,7 @@ public class FloatingPointArithmeticBench implements IBenchmark {
                 a[j-1] = list[j+1] + list[j];
                 a[j+2] = list[j+2] + a[j] + a[j-1];
             }
-            return 3;
+            return 15;
         }
 
     }
